@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="row categoryHeader d-flex justify-content-between px-3">
+        <div class="categoryCard " *ngFor="let category of categories" >
+            <div class="row d-flex justify-content-center"><img src = {{category.categoryImage}} class="img-fluid"></div>
+            <div class="row d-flex justify-content-center">
+                <div>{{category.categoryName}}</div>
+                <div *ngIf="category.subCategory===true">
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

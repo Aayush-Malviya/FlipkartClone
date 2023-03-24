@@ -1,0 +1,35 @@
+<nav>
+    <div class="container-fluid ">
+        <div class="row navBar d-flex justify-content-center align-items-center ">
+            <div class="navbar-logo">
+                <div class="row-12"><img src = 'assets\FlipkartLogo.png' class="img-fluid" width="78"></div>
+                <div class="">
+                    <div>
+                        <span>Explore <span style="color: #ffe500;">Plus</span></span><img src="assets\FlipKartStar.png" class="img-fluid" width="12">
+                    </div>
+                </div>
+            </div>
+            <div class="searchBar">
+                <div class="row">
+                    <div class="searchBarFeild"><input type="text" placeholder="Search for products, brands and more"></div>
+                    <div class=" searchBarMagnifyIcon"><i class="fa fa-search" aria-hidden="true"></i></div>
+                </div>
+            </div>
+            <div class="loginButton" (click)="logginClicked()">
+                Login   
+                <div *ngIf="showLogin">
+                    <app-login-screen>
+                    </app-login-screen>
+                </div>
+            </div>
+            <div class="becomeSeller">Become a Seller</div>
+            <div class="navbarMenu">
+                Menu 
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </div>
+            <div class="navbarCart">
+                <p><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</p>
+            </div>
+        </div>
+    </div>
+</nav>

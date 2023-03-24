@@ -1,0 +1,88 @@
+$flipkartBlue : #2874f0;
+*{
+    margin: 0;
+    padding: 0;
+}
+.navBar{
+    background-color: $flipkartBlue;
+    min-height: 56px;
+    .navbar-logo {
+        line-height: 12px;
+        margin-right: 12px;
+        span{
+            font-size: 11px;
+            font-style: italic;
+            color: #f0f0f0;
+            font-weight: 500;
+            padding-right: 2px;
+        }
+    }
+
+
+    .searchBar{
+        margin-right:19px;
+        .searchBarFeild input{
+            padding: 0 16px;
+            border-radius: 2px 0 0 2px;
+            border: 0;
+            outline: 0 none;
+            font-size: 14px;
+            height: 36px;
+            min-width: 325px;
+        }
+        .searchBarMagnifyIcon {
+            background-color: white;
+            height: 36px;
+            width: 36px;
+            border-radius: 0 2px 2px 0;
+            cursor: pointer;
+            padding: 5px 10px 0 6px;
+            i{
+                color: $flipkartBlue;
+                font-size: 19px;
+            }
+        }
+    }
+
+    .loginButton{
+        margin-right: 40px;
+        color: $flipkartBlue;
+        font-weight: 500;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 2px;
+        height: 32px;
+        padding: 4px 40px;
+        border: 1px solid #dbdbdb;
+        font-size: 16px;
+        width:123px;
+    }
+    
+    .becomeSeller{
+        color: #fff;
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 0.1px;
+        margin-right: 40px;
+    }
+
+    .navbarMenu{
+        font-size: 16px;
+        letter-spacing: .1px;
+        font-weight: 500;
+        color: #fff;
+        margin-right: 40px;
+    }
+
+    .navbarCart{
+        color: #fff;
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 0.1px;
+        i{
+            font-size: 20px;
+            padding-right: 5px;
+        }
+    }
+}
+
