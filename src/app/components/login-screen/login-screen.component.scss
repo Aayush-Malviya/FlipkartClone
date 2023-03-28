@@ -1,11 +1,13 @@
-
-.loginWindow{
+*{
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+}
+.loginWindow{
     border-radius: 2px;
     height: 528px;
     max-width: 750px;
-    min-width: 650px;
+    min-width: 600px;
     .loginLogo{
         background-color: #2874f0;
         color: #fff;
@@ -14,7 +16,6 @@
         width: 40%;
         font-size: 15px;
         background-image: url("/assets/loginBackground.png");
-        background-position: bottom; /* Center the image */
         background-repeat: no-repeat; 
         background-position-y: 320px;
         span{
@@ -32,7 +33,6 @@
     .loginInputWindow{
         width: 60%;
         padding: 56px 35px 16px;
-        // position: relative;
         background: #fff;
         
         input{

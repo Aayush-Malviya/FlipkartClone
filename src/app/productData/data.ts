@@ -5,8 +5,7 @@ export default [
         price : "11,999",
         originalPrice : "18,999",
         discount: 36,
-        category : "electronic",
-        subCategory : "mobile",
+        category : "Mobile",
         RAM : 8,
         ROM : 128,
         battery : 5000,
@@ -14,7 +13,7 @@ export default [
         frontCamera : 16,
         backCamera : 50,
         rating: 4.4,
-        srcLink:"sdjf"
+        srcLink:"assets/products/1.webp"
     },
     {
         id:2,
@@ -22,8 +21,7 @@ export default [
         price : "5,749",
         originalPrice : "8,999",
         discount: 36,
-        category : "electronic",
-        subCategory : "mobile",
+        category : "Mobile",
         RAM : 2,
         ROM : 32,
         battery : 5000,
@@ -31,7 +29,7 @@ export default [
         frontCamera : 5,
         backCamera : 8,
         rating: 4.0,
-        srcLink:"sdjf"
+        srcLink:"assets/products/2.webp"
     },
     {
         id:3,
@@ -39,8 +37,7 @@ export default [
         price : "70,999",
         originalPrice : "79,999",
         discount: 11,
-        category : "electronic",
-        subCategory : "mobile",
+        category : "Mobile",
         RAM : 6,
         ROM : 128,
         battery : 5000,
@@ -48,7 +45,7 @@ export default [
         frontCamera : 12,
         backCamera : 12,
         rating: 4.7,
-        srcLink:"sdjf"
+        srcLink:"assets/products/3.webp"
     },
 
     {
@@ -57,8 +54,7 @@ export default [
         price : "40,999",
         originalPrice : "43,900",
         discount: 6,
-        category : "electronic",
-        subCategory : "mobile",
+        category : "Mobile",
         RAM : 4,
         ROM : 64,
         battery : 5000,
@@ -66,7 +62,7 @@ export default [
         frontCamera : 12,
         backCamera : 12,
         rating: 4.6,
-        srcLink:"sdjf"
+        srcLink:"assets/products/4.webp"
     },
     {
         id:5,
@@ -74,8 +70,7 @@ export default [
         price : "1,24,999",
         originalPrice : "1,49,999",
         discount: 16,
-        category : "electronic",
-        subCategory : "mobile",
+        category : "Mobile",
         RAM : 12,
         ROM : 256,
         battery : 5000,
@@ -83,7 +78,7 @@ export default [
         frontCamera : 12,
         backCamera : 200,
         rating: 4.0,
-        srcLink:"sdjf"
+        srcLink:"assets/products/5.webp"
     },
     {
         id:6,
@@ -91,8 +86,7 @@ export default [
         price : "7,499",
         originalPrice : "11,499",
         discount: 34,
-        category : "electronic",
-        subCategory : "mobile",
+        category : "Mobile",
         RAM : 4,
         ROM : 64,
         battery : 5000,
@@ -100,7 +94,7 @@ export default [
         frontCamera : 5,
         backCamera : 13,
         rating: 4.5,
-        srcLink:"sdjf"
+        srcLink:"assets/products/6.webp"
     },
     {
         id:7,
@@ -108,8 +102,7 @@ export default [
         price : "16,348",
         originalPrice : "24,999",
         discount: 34,
-        category : "electronic",
-        subCategory : "mobile",
+        category : "Mobile",
         RAM : 6,
         ROM : 128,
         battery : 5000,
@@ -117,6 +110,249 @@ export default [
         frontCamera : 5,
         backCamera : 50,
         rating: 4.2,
-        srcLink:"sdjf"
+        srcLink:"assets/products/7.webp"
+    },
+    {
+        id:8,
+        name : "Samsung Galaxy Tab A8",
+        price : "15,499",
+        originalPrice : "21,599",
+        discount: 28,
+        category : "Tablets",
+        RAM : 3,
+        ROM : 32,
+        battery : 7040,
+        processor : "Octa-Core",
+        frontCamera : 8,
+        backCamera : 8,
+        displaySize : 10.5,
+        rating: 4.3,
+        srcLink:"assets/products/8.webp"
+    },
+    {
+        id:9,
+        name : "Apple iPad (9th Gen)",
+        price : "30,900",
+        originalPrice : "33,900",
+        discount: 8,
+        category : "Tablets",
+        RAM : 6,
+        ROM : 64,
+        battery : 5000,
+        processor : "A13 Bionic Chip with 64-bit Architecture",
+        frontCamera : 12,
+        backCamera : 8,
+        displaySize : 10.2,
+        rating: 4.6,
+        srcLink:"assets/products/9.webp"
+    },
+
+    {
+        id:10,
+        name : "Apple iPad (5th Gen)",
+        price : "89,900",
+        originalPrice : "93,900",
+        discount: 8,
+        category : "Tablets",
+        RAM : 4,
+        ROM : 256,
+        battery : 5000,
+        processor : "Apple A11 Bionic Chip",
+        frontCamera : 12,
+        backCamera : 12,
+        displaySize : 10.9,
+        rating: 4.6,
+        srcLink:"assets/products/10.webp"
+    },
+
+    {
+        id:11,
+        name : "Realme Pad X",
+        price : "27,999",
+        originalPrice : "44,999",
+        discount: 37,
+        category : "Tablets",
+        RAM : 6,
+        ROM : 128,
+        battery : 8340,
+        processor : "Qualcomm Snapdragon 695",
+        frontCamera : 8,
+        backCamera : 13,
+        displaySize : 11,
+        rating: 4.4,
+        srcLink:"assets/products/11.webp"
+    },
+
+    {
+        id:12,
+        name : "Lenovo Tab M8 HD (2nd Gen)",
+        price : "9,289",
+        originalPrice : "14,000",
+        discount: 33,
+        category : "Tablets",
+        RAM : 2,
+        ROM : 132,
+        battery : 5000,
+        processor : "MediaTek Helio A22 Quad Core (2.0Hz)",
+        frontCamera : 2,
+        backCamera : 8,
+        displaySize : 8,
+        rating: 4.1,
+        srcLink:"assets/products/12.webp"
+    },
+
+    {
+        id:13,
+        name : "Lenovo Tab M8 Full HD",
+        price : "14,999",
+        originalPrice : "25,000",
+        discount: 40,
+        category : "Tablets",
+        RAM : 4,
+        ROM : 64,
+        battery : 5100,
+        processor : "MediaTek Helio P22T Tab Quad-Core",
+        frontCamera : 5,
+        backCamera : 13,
+        displaySize : 8,
+        rating: 4.1,
+        srcLink:"assets/products/13.webp"
+    },
+
+    {
+        id:14,
+        name : "Men Printed Round Neck Dark Blue T-Shirt",
+        price : "179",
+        originalPrice : "1,299",
+        discount: 86,
+        category : "Fashion",
+        rating: 3.9,
+        AvailableSizes: "M, L, XL",
+        srcLink:"assets/products/14.webp"
+    },
+
+    {
+        id:15,
+        name : "Men Regular Fit Printed Cut Away Collar Casual Shirt",
+        price : "289",
+        originalPrice : "799",
+        discount: 66,
+        category : "Fashion",
+        rating: 3.8,
+        AvailableSizes: "S ,M, L, XL",
+        srcLink:"assets/products/15.webp"
+    },
+
+    {
+        id:16,
+        name : "Men Regular Fit Printed Cut Away Collar Casual Shirt",
+        price : "499",
+        originalPrice : "999",
+        discount: 60,
+        category : "Fashion",
+        rating: 3.6,
+        AvailableSizes: "S ,M, L",
+        srcLink:"assets/products/16.webp"
+    },
+
+    {
+        id:17,
+        name : "Men Slim Fit Solid Spread Collar Formal Shirt",
+        price : "379",
+        originalPrice : "1,999",
+        discount: 81,
+        category : "Fashion",
+        rating: 3.6,
+        AvailableSizes: "S ,M, L, XL, XXL",
+        srcLink:"assets/products/17.webp"
+    },
+
+    {
+        id:18,
+        name : "ELANHOOD Men Regular Fit Cream Viscose Rayon Trousers",
+        price : "419",
+        originalPrice : "1,299",
+        discount: 67,
+        category : "Fashion",
+        rating: 3.6,
+        AvailableSizes: "28, 30, 32, 34, 36, 38, 40",
+        srcLink:"assets/products/18.webp"
+    },
+
+    {
+        id:19,
+        name : "FABFIZA Unstitched Cotton Linen Shirt Fabric Printed",
+        price : "251",
+        originalPrice : "899",
+        discount: 72,
+        category : "Fashion",
+        rating: 3.6,
+        AvailableSizes: "S ,M, L, XL",
+        srcLink:"assets/products/19.webp"
+    },
+
+    {
+        id:20,
+        name : "Farmley Popular California Almonds  (250 g)",
+        price : "269",
+        originalPrice : "499",
+        discount: 40,
+        category : "Food & Supplements",
+        rating: 4.2,
+        srcLink:"assets/products/20.webp"
+    },
+
+    {
+        id:21,
+        name : "Happilo Premium International Dried Kiwi  (200 g)",
+        price : "126",
+        originalPrice : "200",
+        discount: 37,
+        category : "Food & Supplements",
+        rating: 4.1,
+        srcLink:"assets/products/21.webp"
+    },
+
+    {
+        id:22,
+        name : "OPEN SECRET Premium Cashews/Kaju| 100% Natural|Tasty, Crunchy| Immunity Boosting Nuts| 500g Cashews  (501 g)",
+        price : "424",
+        originalPrice : "899",
+        discount: 52,
+        category : "Food & Supplements",
+        rating: 4.4,
+        srcLink:"assets/products/22.webp"
+    },
+
+    {
+        id:23,
+        name : "Happilo Natural Premium Californian Inshell Akhrot/ Walnuts  (200 g)",
+        price : "176",
+        originalPrice : "235",
+        discount: 25,
+        category : "Food & Supplements",
+        rating: 4.2,
+        srcLink:"assets/products/23.webp"
+    },
+
+    {
+        id:24,
+        name : "MUSCLEBLAZE Raw Whey Protein Concentrate 80% with Digestive Enzymes, Labdoor USA Certified Whey Protein  (2 kg, Unflavored)",
+        price : "3,397",
+        originalPrice : "5,599",
+        discount: 39,
+        category : "Food & Supplements",
+        rating: 4.2,
+        srcLink:"assets/products/24.webp"
+    },
+    {
+        id:25,
+        name : "Cadbury Dairy Milk Home Treats pack of 18 Mini Chocolate Bars  (2 x 126 g)",
+        price : "262",
+        originalPrice : "298",
+        discount: 12,
+        category : "Food & Supplements",
+        rating: 4.3,
+        srcLink:"assets/products/25.webp"
     },
 ]

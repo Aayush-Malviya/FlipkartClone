@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row productCard" *ngFor="let i of ['Mobile','Tablets','Fashion','Food & Supplements']">
+        <div class="cardName">
+            <div class="cardName-Name">
+                <h2 class="mt-4">{{"Best of " + i}}</h2>
+                <a><div class="cardButton">View All</div></a>
+            </div>
+        </div>
+        <div class="allProducts">
+            <a *ngIf="filteringData(i)!=0">
+                <div class="product" *ngFor="let product of filteredData">
+                    <img src="{{product.srcLink}}">
+                    <div class="productNameCSS">{{product.name}}</div>
+                    <p style="font-size: 16px; color: #388e3c; padding-bottom: 5px ;">JUST &#8377; {{product.price}}</p>
+                    <p style="color: #949494; font-size: 13px; letter-spacing: 1px;">Check Out More</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

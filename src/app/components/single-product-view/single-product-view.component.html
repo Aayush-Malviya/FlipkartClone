@@ -1,0 +1,70 @@
+<nav cla>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-between align-items-center px-4 navbar-category">
+            <div *ngFor="let category of productListCategories">
+                <span>{{category.categoryName}}</span>
+                <i class="fa fa-angle-down" aria-hidden="true" *ngIf="category.subCategory==true"></i>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center m-2" style="background-color: rgb(255, 255, 255);padding: 16px;box-shadow: 0 1px 5px #e3dbdb;">
+        <div class="col-4 productImage">
+            <div class="row d-flex justify-content-center" style="border: 1px solid #f0f0f0; padding: 16px;"><img src="assets/products/AppleiPad1.webp"></div>
+            <div class="row d-flex justify-content-around mt-2">
+                <div class="col-5.5 AddToCartButton d-flex justify-content-center align-items-center"><a><i class="fa fa-shopping-cart" aria-hidden="true"></i> GO TO CART</a></div>
+                <div class="col-5.5 BuyButton d-flex justify-content-center align-items-center"><a><i class="fa fa-bolt" aria-hidden="true"></i> BUY NOW</a></div>
+            </div>
+        </div>
+        <div class="col-7 productDescription" >
+            <div><h5>{{"Poco C50 (Royal Blue, 32GB)"}}</h5></div>
+            <div style="padding: 10px 0 8px;">
+                <div class="ratingButton">
+                    {{"4.3"}}
+                    <i class="fa fa-star" aria-hidden="true" style="color: white;"></i>
+                </div>
+                <div style="display: inline-block; margin-left: 10px;"><span style="color: #878787; font-size: 14px;">9,534 Ratings & 535 Reviews <img src="assets/flipkartAssuredIcon.png" style="height: 21px;"></span></div>
+            </div>
+            <div style="font-size: 25px; display: inline-block; margin-right: 15px;">
+                &#8377; {{"5,749"}}
+            </div>
+            
+            
+            <div style="display: inline-block; color: #878787; font-size: 14px; padding: 8px 0 0; margin-bottom: 15px;">
+                <s>&#8377; {{"8,999"}}</s><span style="padding-left: 10px; color: #388E3C;">{{36+"% "}}off</span>
+            </div>
+            
+            <div class="descriptionListDiv">
+                <ul class="descriptionList">
+                    <li *ngFor="let i of [1,2,3,4,1,1,1,1,1,1,1,11,1,1,1,1,1,1,1,1,1,1,]"><span style=" color: #c2c2c2; padding-right: 8px">•</span> Product description</li>
+                </ul>
+            </div>
+            
+            <div style="font-weight: 400; font-size: 14px; line-height: 20px; padding: 4px 0;">+ ₹29 Secured Packaging Fee</div>
+            
+            
+            <div style="font-family: sans-serif, Arial, Helvetica, sans-serif;">
+                <p>Availabel Offers</p>
+                <div>
+                    <img src="assets/offerIcon.webp" height="18" width="18">
+                    <span style="font-size: 14px; font-weight: 400;"><b> Bank Offer</b> 5% Cashback on Flipkart Axis Bank Card <span style="color: #2874F0;">T&C</span></span>
+                </div>
+                <div>
+                    <img src="assets/offerIcon.webp" height="18" width="18">
+                    <span style="font-size: 14px; font-weight: 400;"><b>  Special Price</b> Get extra &#8377;3250 off (price inclusive of cashback/coupon)<span style="color: #2874F0;"> T&C</span></span>
+                </div>
+                <div>
+                    <img src="assets/offerIcon.webp" height="18" width="18">
+                    <span style="font-size: 14px; font-weight: 400;">  Buy this Product and get Extra &#8377;500 Off on Bikes & Scooters <span style="color: #2874F0;"> T&C</span></span>
+                </div>
+                <div>
+                    <img src="assets/offerIcon.webp" height="18" width="18">
+                    <span style="font-size: 14px; font-weight: 400;"><b>  Partner Offer</b> Sign up for Flipkart Pay Later and get Flipkart Gift Card worth up to &#8377;500*<span style="color: #2874F0;"> T&C</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif,Arial, Helvetica;
+}
+.productCard{
+    padding:8px;
+    height: 330px;
+    box-shadow: 0 1px 5px #e3dbdb;
+}
+.cardName{
+    background-image: url("/assets/productCardBackgroundImage.webp");
+    width: 19%;
+    height: 310px;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    display: inline-block;
+}
+.cardName-Name{
+    text-align: center;
+    height: 100%;
+    padding: 28px 10px 124px;
+}
+.cardButton{
+    display: inline-block;
+    margin-top: 34px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #2874f0;
+    color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    border-radius: 3px;
+}
+
+.allProducts::-webkit-scrollbar{    //to hide the scrollbar
+        display: none;  
+}
+
+.allProducts{
+    width:81%;  
+    white-space: nowrap; 
+    overflow-x: auto;
+    .product{
+        display: inline-block; 
+        // height: 92%;
+        height: 200px; 
+        width: 250px; 
+        margin:10px;
+        text-align: center;
+        img{
+            height: 200px;
+            padding: 20px;
+        }
+    }
+}
+
+.productNameCSS{
+    font-size: 14px; 
+    margin-bottom: 6px; 
+    font-weight: 500; 
+    padding: 8px;
+    overflow: hidden;
+}

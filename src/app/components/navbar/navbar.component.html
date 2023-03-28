@@ -11,16 +11,15 @@
             </div>
             <div class="searchBar">
                 <div class="row">
-                    <div class="searchBarFeild"><input type="text" placeholder="Search for products, brands and more"></div>
-                    <div class=" searchBarMagnifyIcon"><i class="fa fa-search" aria-hidden="true"></i></div>
+                    <div class="searchBarFeild"><input [(ngModel)]="searchValue" type="text" placeholder="Search for products, brands and more"></div>
+                    <div class=" searchBarMagnifyIcon"><a (click)="searchResult()"><i class="fa fa-search" aria-hidden="true"></i></a></div>
                 </div>
             </div>
-            <div class="loginButton" (click)="logginClicked()">
-                Login   
-                <div *ngIf="showLogin">
-                    <app-login-screen>
-                    </app-login-screen>
-                </div>
+            <div class="loginButton" *ngIf="isUserLoggedIn==false" (click)="openModal()">
+                Login 
+            </div>
+            <div class="userName" *ngIf="isUserLoggedIn==true" >
+                Welcome {{loggedInUser}}
             </div>
             <div class="becomeSeller">Become a Seller</div>
             <div class="navbarMenu">
@@ -28,7 +27,12 @@
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
             </div>
             <div class="navbarCart">
+                <div class="navbarOrderCount">{{"1"}}</div>
                 <p><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</p>
+            </div>
+
+            <div class="logOutButton" *ngIf="isUserLoggedIn==true" (click)="userLoggedOut()">
+                Log Out 
             </div>
         </div>
     </div>

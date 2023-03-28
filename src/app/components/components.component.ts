@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ServicesService } from '../services/services.service';
 @Component({
   selector: 'app-components',
   templateUrl: './components.component.html',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComponentsComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit(): void {
+  }
+
+  isUserSearching:boolean = false;
+  searchValue:string = "";
+
+  constructor(private ServicesService : ServicesService){
+  }
+
+  searchResults(searchVaue:string){
+    this.isUserSearching = true;
+    this.searchValue = searchVaue;
+    // console.log(searchVaue);
   }
 
 }

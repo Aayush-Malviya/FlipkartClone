@@ -1,12 +1,22 @@
-<app-navbar class="sticky-top ">
+<app-navbar class="sticky-top" (navbarSearchValueEmitter) = "searchResults($event)">
 </app-navbar>
 
-<app-shopping-categories>
-    
-</app-shopping-categories>
+<!-- first page  -->
+<div *ngIf="isUserSearching==false">
+    <app-shopping-categories></app-shopping-categories>
+    <app-advertisement></app-advertisement>
+    <app-product-card></app-product-card> 
+</div>
 
-<app-advertisement>
-    
-</app-advertisement>
+<!--product list page-->
+<div *ngIf="isUserSearching==true">
+    <app-product-list-view [searchResult] = "searchValue"></app-product-list-view> 
+</div>
 
-<app-login-screen></app-login-screen>
+
+<!--Single product view
+    <app-single-product-view></app-single-product-view>
+-->
+<!--Footer
+    <app-footer></app-footer>
+-->
