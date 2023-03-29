@@ -59,7 +59,8 @@
 .productNameCSS{
     font-size: 14px; 
     margin-bottom: 6px; 
+    height: fit-content;
     font-weight: 500; 
-    padding: 8px;
     overflow: hidden;
+    text-overflow: ellipsis;
 }

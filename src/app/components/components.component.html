@@ -2,21 +2,31 @@
 </app-navbar>
 
 <!-- first page  -->
-<div *ngIf="isUserSearching==false">
-    <app-shopping-categories></app-shopping-categories>
-    <app-advertisement></app-advertisement>
-    <app-product-card></app-product-card> 
-</div>
+
 
 <!--product list page-->
-<div *ngIf="isUserSearching==true">
-    <app-product-list-view [searchResult] = "searchValue"></app-product-list-view> 
-</div>
 
 
-<!--Single product view
-    <app-single-product-view></app-single-product-view>
--->
-<!--Footer
+<container-element [ngSwitch]="route">
+    <div *ngSwitchCase="'home'">
+        <app-shopping-categories></app-shopping-categories>
+        <app-advertisement></app-advertisement>
+        <app-product-card (productIdEmitter) = "setRoute($event)"></app-product-card> 
+    </div>
+
+    <div *ngSwitchCase="'productList'">
+        <app-product-list-view [searchResult] = "searchValue"></app-product-list-view> 
+    </div>
+
+    <div *ngSwitchCase="'productView'">
+        <!-- {{searchWithProductId}} -->
+        <app-single-product-view [searchProductId] = "searchWithProductId" ></app-single-product-view> 
+    </div>
+    
+
+</container-element>
+
+
+
+<!-- Footer -->
     <app-footer></app-footer>
--->

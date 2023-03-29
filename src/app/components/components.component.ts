@@ -10,16 +10,24 @@ export class ComponentsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isUserSearching:boolean = false;
+  route : string = "home";
+
   searchValue:string = "";
+
+  searchWithProductId:number = 1;
 
   constructor(private ServicesService : ServicesService){
   }
 
+  setRoute(Id:number){
+    this.searchWithProductId = Id;
+    this.route = "productView"
+    // console.log("id got from product card is "+this.searchWithProductId);
+  }
+
   searchResults(searchVaue:string){
-    this.isUserSearching = true;
+    this.route = "productList";
     this.searchValue = searchVaue;
-    // console.log(searchVaue);
   }
 
 }

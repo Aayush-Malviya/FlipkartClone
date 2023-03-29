@@ -52,9 +52,7 @@
                             <ul class="descriptionList">
                                 <li *ngFor="let item of i | keyvalue">
                                     <span style=" color: #c2c2c2; padding-right: 8px">•</span> 
-                                    <span *ngIf="(i.hasOwnProperty(item) || i.hasOwnProperty('id') || i.hasOwnProperty('name') || i.hasOwnProperty('price') || i.hasOwnProperty('originalPrice') || i.hasOwnProperty('rating') || i.hasOwnProperty('srcLink') || i.hasOwnProperty('category') || i.hasOwnProperty('subCategory'))">
                                         {{item.key}} : {{item.value}}
-                                    </span>
                                 </li>
                             </ul>
                         </div>

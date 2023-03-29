@@ -11,7 +11,7 @@
             </div>
             <div class="searchBar">
                 <div class="row">
-                    <div class="searchBarFeild"><input [(ngModel)]="searchValue" type="text" placeholder="Search for products, brands and more"></div>
+                    <div class="searchBarFeild"><input (keydown.enter)="searchResult()" [(ngModel)]="searchValue" type="text" placeholder="Search for products, brands and more"></div>
                     <div class=" searchBarMagnifyIcon"><a (click)="searchResult()"><i class="fa fa-search" aria-hidden="true"></i></a></div>
                 </div>
             </div>

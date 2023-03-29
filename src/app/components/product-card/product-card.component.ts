@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Component, OnInit , Output, EventEmitter} from '@angular/core';
 import data from 'src/app/productData/data';
 @Component({
   selector: 'app-product-card',
@@ -8,6 +7,7 @@ import data from 'src/app/productData/data';
 })
 export class ProductCardComponent implements OnInit {
 
+  @Output() productIdEmitter = new EventEmitter<number>();
   constructor() { 
     
   }
@@ -27,4 +27,8 @@ export class ProductCardComponent implements OnInit {
     return this.filteredData;
   }
 
+  searchProduct(productId:number){
+    this.productIdEmitter.emit(productId);
+  }
+  
 }

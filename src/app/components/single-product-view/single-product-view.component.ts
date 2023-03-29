@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
+import data from 'src/app/productData/data';
 
 @Component({
   selector: 'app-single-product-view',
@@ -7,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleProductViewComponent implements OnInit {
 
-  constructor() { }
+  @Input() searchProductId: number = 0;
+  productDetails:any;
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
+    console.log(this.searchProductId);
+    this.productDetails = data[this.searchProductId-1];
   }
+  
 
   productListCategories = [
     {

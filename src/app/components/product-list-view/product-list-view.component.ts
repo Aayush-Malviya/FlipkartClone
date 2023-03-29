@@ -28,15 +28,12 @@ export class ProductListViewComponent implements OnInit, OnChanges {
     else{
       this.searchResult = this.searchResult.toLowerCase();
       for(let i=0 ; i<data.length ;  i++){
-        let temp = data[i].name.toLocaleLowerCase();
+        let temp = data[i].name.toLowerCase();
         if(temp.includes(this.searchResult))
           this.filteredData.push(data[i]);
       }
     }
     this.numberOfProducts = this.filteredData.length;
-    // if(this.filteredData.length > 0){
-    //   console.log(this.filteredData[0].id); 
-    // }
   }
 
   // 
