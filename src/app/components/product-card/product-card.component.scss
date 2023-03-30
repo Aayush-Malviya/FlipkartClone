@@ -54,6 +54,10 @@
             padding: 20px;
         }
     }
+    .product:hover{
+        transform: scale(1.05);
+        transition: transform .15s;
+    }
 }
 
 .productNameCSS{
