@@ -16,6 +16,13 @@
         font-weight: 500;
     }
 }
+
+.productName{
+    cursor: pointer;
+    :hover{
+        color: #2874f0;;
+    }
+}
 .productList{
     margin: 8px;
 }
