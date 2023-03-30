@@ -13,7 +13,7 @@
             <div class="row  p-2 " style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); font-size: 14px; background-color: white; " *ngFor="let i of cartData; let indexOfelement=index;">
                     <div class="col-3 d-flex justify-content-center align-items-center" ><img src="{{i.srcLink}}" style="max-height: 150px;"></div>
                     <div class="col-8">
-                        <span>{{i.name}}</span>
+                        <span style="font-size: 16px; line-height: 1;">{{i.name}}</span>
                         <p style="color:#8d888a; font-size: 14px;height: 20px; margin-bottom: 10px;">Seller: RetailNet</p>
                         <span style="color: #878787; text-decoration: line-through; font-size: 14px; margin-right: 10px;">&#8377; {{i.originalPrice}}</span>
                         <span style="font-size: 18px; font-weight: 600;color: #212121;margin-right: 8px; margin-top: 18px;">&#8377; {{i.price}}</span>
