@@ -1,5 +1,6 @@
 import { Component, OnInit , Input} from '@angular/core';
 import data from 'src/app/productData/data';
+import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-single-product-view',
@@ -10,12 +11,12 @@ export class SingleProductViewComponent implements OnInit {
 
   @Input() searchProductId: number = 0;
   productDetails:any;
-  constructor() {
+  constructor(private ServicesService:ServicesService ) {
     
   }
 
   ngOnInit(): void {
-    console.log(this.searchProductId);
+    // console.log(this.searchProductId);
     this.productDetails = data[this.searchProductId-1];
   }
   
@@ -49,4 +50,11 @@ export class SingleProductViewComponent implements OnInit {
       id : 9 , categoryName : "Offer Zone", subCategory: false
     }
   ]
+
+  addToCart(Id : number){
+    console.log(Id);
+    this.ServicesService.addToCart(Id);
+    this.ServicesService.raiseChangeInCoutEventEmitter(1); //passing temporary data just to raise the event
+  }
+  
 }

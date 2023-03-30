@@ -37,8 +37,8 @@ export class LoginScreenComponent implements OnInit {
       this.ServicesService.setEmail(this.email);
       this.ServicesService.setLoginStatus();
       this.activeModalService.close(this.validCredentials);
-      console.log(this.ServicesService.getEmail());
-      console.log(this.ServicesService.getLoginStatus());
+      // console.log(this.ServicesService.getEmail());
+      // console.log(this.ServicesService.getLoginStatus());
     }
   }
 

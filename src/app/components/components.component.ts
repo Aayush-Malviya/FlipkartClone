@@ -19,15 +19,22 @@ export class ComponentsComponent implements OnInit {
   constructor(private ServicesService : ServicesService){
   }
 
-  setRoute(Id:number){
+  showProductData(Id:number){
     this.searchWithProductId = Id;
     this.route = "productView"
-    // console.log("id got from product card is "+this.searchWithProductId);
   }
 
   searchResults(searchVaue:string){
-    this.route = "productList";
     this.searchValue = searchVaue;
+    this.route = "productList";
+  }
+
+  showCartProducts(showCartOrNot:boolean){
+    this.route = "cart";
+  }
+
+  showHomePage(showOrNot:boolean){
+    this.route = "home";
   }
 
 }

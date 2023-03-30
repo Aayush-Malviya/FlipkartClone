@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif, Arial, Helvetica, sans-serif;
+}
+
+#enterDeliveryAdd{
+    
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 10px 16px;
+    color: #2874f0;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.placeOrderButton{
+    text-align: center; 
+    background-color: #FB641B; 
+    margin: 0 70px; 
+    height: 47px; 
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 4px;   
+}
+
+
+.IncreaseDecreaseQuantity{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #e0e0e0;
+    margin: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    padding-top: 2px;
+}

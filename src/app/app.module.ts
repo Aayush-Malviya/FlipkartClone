@@ -16,6 +16,7 @@ import { ProductListViewComponent } from './components/product-list-view/product
 import { SingleProductViewComponent } from './components/single-product-view/single-product-view.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CommonModule } from '@angular/common';
+import { CartComponent } from './components/cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { CommonModule } from '@angular/common';
     ProductListViewComponent,
     SingleProductViewComponent,
     FooterComponent,
+    CartComponent,
   ],
   imports: [
     NgbModule,
@@ -40,4 +42,6 @@ import { CommonModule } from '@angular/common';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

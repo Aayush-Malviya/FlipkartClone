@@ -1,7 +1,7 @@
 <nav>
     <div class="container-fluid ">
         <div class="row navBar d-flex justify-content-center align-items-center ">
-            <div class="navbar-logo">
+            <div class="navbar-logo" (click)="goToHomePage()">
                 <div class="row-12"><img src = 'assets\FlipkartLogo.png' class="img-fluid" width="78"></div>
                 <div class="">
                     <div>
@@ -26,8 +26,8 @@
                 Menu 
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
             </div>
-            <div class="navbarCart">
-                <div class="navbarOrderCount">{{"1"}}</div>
+            <div class="navbarCart" (click)="showCart()">
+                <div class="navbarOrderCount">{{cartCount}}</div>
                 <p><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</p>
             </div>
 

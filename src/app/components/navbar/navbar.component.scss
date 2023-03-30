@@ -6,7 +6,9 @@ $flipkartBlue : #2874f0;
 .navBar{
     background-color: $flipkartBlue;
     min-height: 56px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
     .navbar-logo {
+        cursor: pointer;
         line-height: 12px;
         margin-right: 12px;
         span{
@@ -81,6 +83,7 @@ $flipkartBlue : #2874f0;
         letter-spacing: 0.1px;
         position: relative;
         height: 40px;
+        cursor: pointer;
         i{
             font-size: 20px;
             padding-right: 5px;

@@ -1,4 +1,4 @@
-import { Component, OnInit , Input, OnChanges, SimpleChanges} from '@angular/core';
+import { Component, OnInit , Input, OnChanges, SimpleChanges, EventEmitter, Output} from '@angular/core';
 import data from 'src/app/productData/data';
 @Component({
   selector: 'app-product-list-view',
@@ -69,8 +69,12 @@ export class ProductListViewComponent implements OnInit, OnChanges {
     }
   ]
 
+  @Output()
+  prodductListIDEventEmitter = new EventEmitter<number>();
   
-  
+  callSingleProductViewEventEmitter(Id:number){
+    this.prodductListIDEventEmitter.emit(Id);
+  }
 
   
 }

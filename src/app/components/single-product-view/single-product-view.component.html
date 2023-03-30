@@ -15,7 +15,7 @@
         <div class="col-4 productImage">
             <div class="row d-flex justify-content-center" style="border: 1px solid #f0f0f0; padding: 16px;"><img src={{productDetails.srcLink}} class="img-fluid" style="max-height: 350px;"></div>
             <div class="row d-flex justify-content-around mt-2">
-                <div class="col-5.5 AddToCartButton d-flex justify-content-center align-items-center"><a><i class="fa fa-shopping-cart" aria-hidden="true"></i> GO TO CART</a></div>
+                <div class="col-5.5 AddToCartButton d-flex justify-content-center align-items-center" (click)="addToCart(productDetails.id)"><a><i class="fa fa-shopping-cart" aria-hidden="true"></i> ADD TO CART</a></div>
                 <div class="col-5.5 BuyButton d-flex justify-content-center align-items-center"><a><i class="fa fa-bolt" aria-hidden="true"></i> BUY NOW</a></div>
             </div>
         </div>

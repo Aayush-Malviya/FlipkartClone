@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginScreenComponent } from '../login-screen/login-screen.component';
 import { ServicesService } from 'src/app/services/services.service';
@@ -9,19 +9,43 @@ import { ServicesService } from 'src/app/services/services.service';
 })
 export class NavbarComponent implements OnInit {
 
+  
+  //--------------Handle search-------------------------
   @Output() navbarSearchValueEmitter = new EventEmitter<string>();
   searchValue:string = "";
-  
+  //emit the search value to show search results
+  searchResult(){
+    this.navbarSearchValueEmitter.emit(this.searchValue);
+  }
+
+  //--------------Show cart----------------------------
+  @Output() showCartEmitter = new EventEmitter<boolean>();
+  showCart(){
+    this.showCartEmitter.emit(true);
+  }
+
+  //--------------Show Home-----------------------------
+  @Output() showHomePage = new EventEmitter<boolean>();
+  goToHomePage(){
+    this.showHomePage.emit(true);
+  }
+
   ngOnInit(): void {
+    this.ServicesService.changeInCoutEventEmitter.subscribe(()=>{
+      this.cartCount = this.ServicesService.getCartSize();
+    });
   }
   
   constructor(private modalService: NgbModal, private ServicesService: ServicesService) {
   };
 
-  //emit the search value to show search results
-  searchResult(){
-    this.navbarSearchValueEmitter.emit(this.searchValue);
+  //----------------Get Cart status using service-----------
+  cartCount:number = this.ServicesService.totalProductPresentInCart;
+  ngOnChanges(changes: SimpleChanges): void {
+    this.cartCount = this.ServicesService.totalProductPresentInCart;
   }
+  
+
 
   loggedInUser:string = "admin...";
   isUserLoggedIn:boolean = this.ServicesService.getLoginStatus();
@@ -41,16 +65,9 @@ export class NavbarComponent implements OnInit {
   userLoggedOut(){
     this.isUserLoggedIn = false;
     this.loggedInUser = "";
+    this.ServicesService.setLoginStatus();
   }
 
-  // setUserName(){
-  //   this.ServicesService.getEmail();
-  //   this.isUserLoggedIn = true;
-  // }
-
-  // unsetUserName(){
-  //   this.ServicesService.setLoginStatus();
-  //   this.isUserLoggedIn = false;
-  // }
+  
 
 }
