@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, OnChanges, SimpleChanges } fro
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginScreenComponent } from '../login-screen/login-screen.component';
 import { ServicesService } from 'src/app/services/services.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,13 +10,14 @@ import { ServicesService } from 'src/app/services/services.service';
 })
 export class NavbarComponent implements OnInit {
 
+  constructor(private modalService: NgbModal, private ServicesService: ServicesService, private route: Router) {
+  };
   
   //--------------Handle search-------------------------
-  @Output() navbarSearchValueEmitter = new EventEmitter<string>();
   searchValue:string = "";
-  //emit the search value to show search results
+  //navigate to the search value to show search results
   searchResult(){
-    this.navbarSearchValueEmitter.emit(this.searchValue);
+    this.route.navigate(['/productList',this.searchValue]);
   }
 
   //--------------Show cart----------------------------
@@ -36,8 +38,7 @@ export class NavbarComponent implements OnInit {
     });
   }
   
-  constructor(private modalService: NgbModal, private ServicesService: ServicesService) {
-  };
+  
 
   //----------------Get Cart status using service-----------
   cartCount:number = this.ServicesService.totalProductPresentInCart;

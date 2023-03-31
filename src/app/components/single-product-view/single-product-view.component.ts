@@ -1,4 +1,5 @@
 import { Component, OnInit , Input} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import data from 'src/app/productData/data';
 import { ServicesService } from 'src/app/services/services.service';
 
@@ -10,14 +11,16 @@ import { ServicesService } from 'src/app/services/services.service';
 export class SingleProductViewComponent implements OnInit {
 
   @Input() searchProductId: number = 0;
+  id:number = 0;
   productDetails:any;
-  constructor(private ServicesService:ServicesService ) {
+  constructor(private ServicesService:ServicesService, private route: Router ,private activeRoute: ActivatedRoute ) {
     
   }
 
   ngOnInit(): void {
     // console.log(this.searchProductId);
-    this.productDetails = data[this.searchProductId-1];
+    this.id= Number(this.activeRoute.snapshot.paramMap.get('id'));
+    this.productDetails = data[this.id-1];
   }
   
 

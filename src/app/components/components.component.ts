@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router , NavigationEnd} from '@angular/router';
 import { ServicesService } from '../services/services.service';
 @Component({
   selector: 'app-components',
@@ -7,16 +8,22 @@ import { ServicesService } from '../services/services.service';
 })
 export class ComponentsComponent implements OnInit {
 
-  ngOnInit(): void {
-  }
-
   route : string = "home";
 
   searchValue:string = "";
 
   searchWithProductId:number = 1;
 
-  constructor(private ServicesService : ServicesService){
+  constructor(private ServicesService : ServicesService, private router: Router){
+    this.router.events.subscribe((event) => {       
+      event instanceof NavigationEnd ? this.route = event.url: 
+      "";
+      console.log(this.route);     
+    })
+  }
+
+  ngOnInit(): void {
+    
   }
 
   showProductData(Id:number){
@@ -34,7 +41,8 @@ export class ComponentsComponent implements OnInit {
   }
 
   showHomePage(showOrNot:boolean){
-    this.route = "home";
+    this.route = "/";
+    this.router.navigate(['/']);
   }
 
 }

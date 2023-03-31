@@ -7,10 +7,10 @@ import { CartComponent } from './components/cart/cart.component';
 
 
 const routes: Routes = [
-//   {path: '', component: ComponentsComponent},
-//   {path: 'productList/:search', component: ProductListViewComponent},
-//   {path: 'productDetails/:id', component: SingleProductViewComponent}
-	{path: 'cart', component: CartComponent}
+// 	{path: '', redirectTo:"home"},
+// 	{path: 'home' ,component: ComponentsComponent},
+ 	{path: 'productList/:search', component: ProductListViewComponent},
+    {path: 'productDetails/:id', component: SingleProductViewComponent},
 ];
 
 @NgModule({

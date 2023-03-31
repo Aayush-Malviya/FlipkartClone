@@ -11,7 +11,9 @@
             </div>
             <div class="searchBar">
                 <div class="row">
+                    <!-- <div class="searchBarFeild"><input (keydown.enter)="searchResult()" [(ngModel)]="searchValue" type="text" placeholder="Search for products, brands and more"></div> -->
                     <div class="searchBarFeild"><input (keydown.enter)="searchResult()" [(ngModel)]="searchValue" type="text" placeholder="Search for products, brands and more"></div>
+
                     <div class=" searchBarMagnifyIcon"><a (click)="searchResult()"><i class="fa fa-search" aria-hidden="true"></i></a></div>
                 </div>
             </div>
@@ -26,7 +28,7 @@
                 Menu 
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
             </div>
-            <div class="navbarCart" (click)="showCart()">
+            <div class="navbarCart" (click)="showCart()" routerLink="/cart">
                 <div class="navbarOrderCount">{{cartCount}}</div>
                 <p><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</p>
             </div>

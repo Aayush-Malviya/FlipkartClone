@@ -1,4 +1,4 @@
-<app-navbar class="sticky-top" (navbarSearchValueEmitter) = "searchResults($event)" (showCartEmitter)="showCartProducts($event)" (showHomePage)="showHomePage($event)">
+<app-navbar class="sticky-top" (showCartEmitter)="showCartProducts($event)" (showHomePage)="showHomePage($event)">
 </app-navbar>
 
 <!-- first page  -->
@@ -9,27 +9,18 @@
 
 <container-element [ngSwitch]="route">
     
-    <div *ngSwitchCase="'home'">
+    <div *ngSwitchCase="'/'">
         <app-shopping-categories></app-shopping-categories>
         <app-advertisement></app-advertisement>
         <app-product-card (productIdEmitter) = "showProductData($event)"></app-product-card> 
     </div>
 
-    <div *ngSwitchCase="'productList'">
-        <app-product-list-view [searchResult] = "searchValue" (prodductListIDEventEmitter) = "showProductData($event)"></app-product-list-view> 
-    </div>
-
-    <div *ngSwitchCase="'productView'">
-        <app-single-product-view [searchProductId] = "searchWithProductId" ></app-single-product-view> 
-    </div>
-
     <div *ngSwitchCase="'cart'">
         <app-cart></app-cart> 
     </div>
+    
+    <div *ngSwitchDefault>
+        <router-outlet></router-outlet>
+    </div>
 
 </container-element>
-
-
-
-<!-- Footer -->
-<app-footer></app-footer>

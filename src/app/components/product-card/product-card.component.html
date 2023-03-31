@@ -8,13 +8,14 @@
         </div>
         <div class="allProducts" *ngIf="filteringData(i)!=0">
             <div class="product" *ngFor="let product of filteredData">
-                <div (click)="searchProduct(product.id)" style="cursor: pointer;">
+                <!-- <div (click)="searchProduct(product.id)" style="cursor: pointer;"> -->
+                <div routerLink="/productDetails/{{product.id}}" style="cursor: pointer;">
                     <img src="{{product.srcLink}}">
                     <div class="productNameCSS">{{product.name}}</div>
                     <p style="font-size: 16px; color: #388e3c; padding-bottom: 5px ;">JUST &#8377; {{product.price}}</p>
                     <p style="color: #949494; font-size: 13px; letter-spacing: 1px;">Check Out More</p>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
 </div>

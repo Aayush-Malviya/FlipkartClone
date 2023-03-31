@@ -20,6 +20,7 @@ export class ServicesService {
   setLoginStatus() : void{
     if(this.isLoggedIn===true){
       this.removeAllProducts();
+      this.totalProductPresentInCart = 0;
       this.raiseChangeInHashMapEvent();
       this.isLoggedIn = false;
     }
