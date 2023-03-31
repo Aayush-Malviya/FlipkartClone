@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { ComponentsComponent } from './components/components.component';
 import { SingleProductViewComponent } from './components/single-product-view/single-product-view.component';
 import { ProductListViewComponent } from './components/product-list-view/product-list-view.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 const routes: Routes = [
-  // {path: '', component: ComponentsComponent},
-  // {path: 'productList', component: ProductListViewComponent},
-  // {path: 'productDetails/:id', component: SingleProductViewComponent},
+//   {path: '', component: ComponentsComponent},
+//   {path: 'productList/:search', component: ProductListViewComponent},
+//   {path: 'productDetails/:id', component: SingleProductViewComponent}
+	{path: 'cart', component: CartComponent}
 ];
 
 @NgModule({
