@@ -33,6 +33,7 @@
         width: 60%;
         padding: 56px 35px 16px;
         background: #fff;
+        font-family: Roboto,Arial,sans-serif;
         
         input{
             padding: 10px 10px 12px 10px;
@@ -40,7 +41,6 @@
             border: none;
             margin: 10px 0;
             border-bottom: 1px solid #e0e0e0;
-            font-family: Roboto,Arial,sans-serif;
             letter-spacing: 0;
             &::placeholder{
                 color: #d4d2d2;
