@@ -17,8 +17,7 @@ export class ComponentsComponent implements OnInit {
   constructor(private ServicesService : ServicesService, private router: Router){
     this.router.events.subscribe((event) => {       
       event instanceof NavigationEnd ? this.route = event.url: 
-      "";
-      console.log(this.route);     
+      "";    
     })
   }
 

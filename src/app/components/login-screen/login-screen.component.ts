@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef} from '@angular/core';
 import { ServicesService } from 'src/app/services/services.service';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-login-screen',
   templateUrl: './login-screen.component.html',
@@ -8,49 +9,49 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class LoginScreenComponent implements OnInit {
 
-  @Output() loginComponentEventEmitter = new EventEmitter<Object>();
-  email : string = '';
-  password : string = '';
+	declare loginForm: FormGroup;
 
-  constructor(private ServicesService: ServicesService, private modalService: NgbModal, private activeModalService: NgbActiveModal) {
-    this.email = '';
-  }
+	ngOnInit(): void {
+	this.loginForm = new FormGroup({		
+		email: new FormControl(null, [Validators.required, Validators.email]),
+		password : new FormControl(null, [Validators.required, Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")])
+	});
+	}
 
-  validCredentials = {
-    validEmail : "admin@gmail.com",
-    validPassword : "admin"
-  };
+	onSubmit(){
+	console.log(this.loginForm);
+	this.checkLoginCredentials();
+	}
 
-  // closeModal(){
-  //   const modalRef = this.modalService.dismissAll();
-  // }
 
-  /*------------------------Validating login Credentials on button click---------------*/
+	constructor(private ServicesService: ServicesService, private activeModalService: NgbActiveModal) {  }
+
+	validCredentials = {
+	validEmail : "admin@gmail.com",
+	validPassword : "Admin@#1"
+	};
+
+	/*------------------------Validating login Credentials on button click---------------*/
+
+	checkLoginCredentials(){
+	if(!(this.loginForm.value.email===this.validCredentials.validEmail))
+		alert("Incorrect Email");
+	if(!(this.loginForm.value.password===this.validCredentials.validPassword))
+		alert("Incorrect Password");
+	if(this.validCredentials.validEmail===this.loginForm.value.email && this.validCredentials.validPassword==this.loginForm.value.password){
+		this.ServicesService.setEmail(this.loginForm.value.email);
+		this.ServicesService.setLoginStatus();
+		this.activeModalService.close(this.validCredentials);
+	}
+	}
+
+	isOpen:boolean = false;
+
+	@ViewChild('x') passwordRef!: ElementRef;
+	showPassword = false;
+	password() {
+		this.passwordRef.nativeElement.type=this.passwordRef.nativeElement.type=='password'?'text':'password'
+		this.showPassword = !this.showPassword;
+	}
   
-  checkLoginCredentials(){
-    if(!(this.email.length > 10 && this.email.substring(this.email.length-10)==="@gmail.com"
-          && this.email===this.validCredentials.validEmail))
-      alert("Invalid email");
-    if(!(this.password===this.validCredentials.validPassword))
-      alert("Invalid Password");
-    if(this.validCredentials.validEmail===this.email && this.validCredentials.validPassword==this.password){
-      this.ServicesService.setEmail(this.email);
-      this.ServicesService.setLoginStatus();
-      this.activeModalService.close(this.validCredentials);
-      // console.log(this.ServicesService.getEmail());
-      // console.log(this.ServicesService.getLoginStatus());
-    }
-  }
-
-  /*------------------------Opening modal from another component------------------------*/
-  isOpen:boolean = false;
-  ngOnInit(): void {
-    this.ServicesService.modalState$.subscribe(isOpen => {
-      this.isOpen = isOpen;
-    });
-  }
-
-  // close() {
-  //   this.ServicesService.closeModal();
-  // }
 }

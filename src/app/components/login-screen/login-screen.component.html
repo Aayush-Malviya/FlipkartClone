@@ -1,37 +1,54 @@
-<!-- Button trigger modal -->
-  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-      Launch modal
-  </button> -->
-  
-  <!-- Modal -->
-  <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"> -->
-    <!-- <div class="modal-dialog modal-dialog-centered" role="document"> -->
-      <!-- <div class="modal-content "> -->
-        <div class="loginWindow container-fluid m-0 p-0 " [class.open]="isOpen">
-          <div class="row ">
-            <div class="loginLogo">
-                <span>Login</span>
-                <p>Get access to your Orders, Wishlist and Recommendations</p>
-            </div>
-            <div class="row loginInputWindow">
-                <div>
-                  <input  type="email" [(ngModel)]="email" placeholder="Enter Email">
-                  <input  type="password" [(ngModel)]="password" placeholder="Enter Password">
-                  <div class="loginConditions">By continuing, you agree to Flipkart's <span style="color: #2874f0;">Terms of Use </span> and <span style="color: #2874f0;">Privacy Policy</span>.</div>
-                  <a href="#" (click)="checkLoginCredentials()" style="text-decoration: none;"><div class="loginButton d-flex justify-content-center align-items-center">Login</div></a>
-                </div>
-                <div class="createAccount d-flex justify-content-center align-items-end">
-                    New to Flipkart? Create an account
-                </div>
-            </div>
-          </div>
+<!-- <div class="loginWindow container-fluid m-0 p-0 " [class.open]="isOpen">
+    <div class="row ">
+    <div class="loginLogo">
+        <span>Login</span>
+        <p>Get access to your Orders, Wishlist and Recommendations</p>
+    </div>
+    <div class="row loginInputWindow">
+        <div>
+            <input  type="email" [(ngModel)]="email" placeholder="Enter Email">
+            <input  type="password" [(ngModel)]="password" placeholder="Enter Password">
+            <div class="loginConditions">By continuing, you agree to Flipkart's <span style="color: #2874f0;">Terms of Use </span> and <span style="color: #2874f0;">Privacy Policy</span>.</div>
+            <a href="#" (click)="checkLoginCredentials()" style="text-decoration: none;"><div class="loginButton d-flex justify-content-center align-items-center">Login</div></a>
         </div>
-     
-      <!-- </div> -->
-    <!-- </div> -->
-  <!-- </div> -->
-
-
-<!-- <div style="width: 650px; background-color: black; height: 650px;">
-
+        <div class="createAccount d-flex justify-content-center align-items-end">
+            New to Flipkart? Create an account
+        </div>
+    </div>
+    </div>
 </div> -->
+
+
+<div class="loginWindow container-fluid m-0 p-0 " [class.open]="isOpen">
+    <div class="row ">
+    <div class="loginLogo">
+        <span>Login</span>
+        <p>Get access to your Orders, Wishlist and Recommendations</p>
+    </div>
+    <div class="row loginInputWindow">
+        <div>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <input type="email" id="email" formControlName = "email" placeholder="Enter Email">
+                    <span class="help-block" *ngIf="!loginForm.get('email')?.valid && loginForm.get('email')?.touched">
+                     Please enter a valid email id 
+                    </span>
+                </div>
+                <div class="form-group">
+                    <input #x type="password" id="password" formControlName = "password" placeholder="Enter Password">
+                    <i *ngIf="showPassword==false" class="fa fa-eye" aria-hidden="true" (click)="password()" style="margin-left: -30px; cursor: pointer;"></i>
+                    <i *ngIf="showPassword==true" class="fa fa-eye-slash" aria-hidden="true" (click)="password()" style="margin-left: -30px; cursor: pointer;"></i>
+                    <span class="help-block" *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched">
+                     Invalid Password
+                    </span>
+                </div>
+                <div class="loginConditions">By continuing, you agree to Flipkart's <span style="color: #2874f0;">Terms of Use </span> and <span style="color: #2874f0;">Privacy Policy</span>.</div>
+                <button type="ngSubmit" style="text-decoration: none;" class="loginButton d-flex justify-content-center align-items-center">Login</button>
+            </form>
+        </div>
+        <div class="createAccount d-flex justify-content-center align-items-end">
+            New to Flipkart? Create an account
+        </div>
+    </div>
+    </div>
+</div>

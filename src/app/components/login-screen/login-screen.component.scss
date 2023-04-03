@@ -1,5 +1,4 @@
 *{
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -36,10 +35,13 @@
         background: #fff;
         
         input{
-            padding: 10px 10px 12px 0;
+            padding: 10px 10px 12px 10px;
             width: 100%;
             border: none;
+            margin: 10px 0;
             border-bottom: 1px solid #e0e0e0;
+            font-family: Roboto,Arial,sans-serif;
+            letter-spacing: 0;
             &::placeholder{
                 color: #d4d2d2;
                 font-size: 16px;
@@ -67,7 +69,11 @@
             font-size: 16px;
             border-radius: 3px;
         }
-
+        
+        .loginButton:focus{
+            outline: none;
+            border: none;
+        }
 
         .createAccount{
             color: #2874f0;
@@ -75,4 +81,9 @@
             font-size: 14px;
         }
     }
+}
+
+.help-block{
+    font-size: 13px;
+    color: red;
 }

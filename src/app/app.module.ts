@@ -10,7 +10,7 @@ import { ShoppingCategoriesComponent } from './components/shopping-categories/sh
 import { AdvertisementComponent } from './components/advertisement/advertisement.component';
 import { LoginScreenComponent } from './components/login-screen/login-screen.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductListViewComponent } from './components/product-list-view/product-list-view.component';
 import { SingleProductViewComponent } from './components/single-product-view/single-product-view.component';
@@ -37,7 +37,8 @@ import { CartComponent } from './components/cart/cart.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

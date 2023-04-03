@@ -69,6 +69,4 @@ export class NavbarComponent implements OnInit {
     this.ServicesService.setLoginStatus();
   }
 
-  
-
 }
