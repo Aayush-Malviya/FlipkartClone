@@ -6,7 +6,7 @@ import { ServicesService } from 'src/app/services/services.service';
 @Component({
   selector: 'app-single-product-view',
   templateUrl: './single-product-view.component.html',
-  styleUrls: ['./single-product-view.component.scss']
+  styleUrls: ['./single-product-view.component.scss'], 
 })
 export class SingleProductViewComponent implements OnInit {
 
@@ -55,7 +55,6 @@ export class SingleProductViewComponent implements OnInit {
   ]
 
   addToCart(Id : number){
-    console.log(Id);
     this.ServicesService.addToCart(Id);
     this.ServicesService.raiseChangeInCoutEventEmitter(1); //passing temporary data just to raise the event
   }

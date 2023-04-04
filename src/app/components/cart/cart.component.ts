@@ -74,5 +74,9 @@ export class CartComponent implements OnInit {
       alert("Please Login to Place Order");
     }
   }
+
+  getNumberOfProducts(){
+    return this.cartData.length;
+  }
   
 }
