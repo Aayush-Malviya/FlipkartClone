@@ -10,6 +10,7 @@
 <container-element [ngSwitch]="route">
     
     <div *ngSwitchCase="'/'">
+        
         <app-shopping-categories></app-shopping-categories>
         <app-advertisement></app-advertisement>
         <app-product-card (productIdEmitter) = "showProductData($event)"></app-product-card> 

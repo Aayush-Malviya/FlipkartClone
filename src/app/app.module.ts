@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ComponentsComponent } from './components/components.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ShoppingCategoriesComponent } from './components/shopping-categories/shopping-categories.component';
+// import { AdvertisementComponent } from './components/advertisement/advertisement.component';
 import { AdvertisementComponent } from './components/advertisement/advertisement.component';
 import { LoginScreenComponent } from './components/login-screen/login-screen.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';

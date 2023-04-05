@@ -19,8 +19,8 @@ export class LoginScreenComponent implements OnInit {
 	}
 
 	onSubmit(){
-	console.log(this.loginForm);
-	this.checkLoginCredentials();
+		console.log(this.loginForm);
+		this.checkLoginCredentials();
 	}
 
 
@@ -34,24 +34,23 @@ export class LoginScreenComponent implements OnInit {
 	/*------------------------Validating login Credentials on button click---------------*/
 
 	checkLoginCredentials(){
-	if(!(this.loginForm.value.email===this.validCredentials.validEmail))
-		alert("Incorrect Email");
-	if(!(this.loginForm.value.password===this.validCredentials.validPassword))
-		alert("Incorrect Password");
-	if(this.validCredentials.validEmail===this.loginForm.value.email && this.validCredentials.validPassword==this.loginForm.value.password){
-		this.ServicesService.setEmail(this.loginForm.value.email);
-		this.ServicesService.setLoginStatus();
-		this.activeModalService.close(this.validCredentials);
-	}
+		if(!(this.loginForm.value.email===this.validCredentials.validEmail))
+			alert("Incorrect Email");
+		if(!(this.loginForm.value.password===this.validCredentials.validPassword))
+			alert("Incorrect Password");
+		if(this.validCredentials.validEmail===this.loginForm.value.email && this.validCredentials.validPassword==this.loginForm.value.password){
+			this.ServicesService.setEmail(this.loginForm.value.email);
+			this.ServicesService.setLoginStatus();
+			this.activeModalService.close(this.validCredentials);
+		}
 	}
 
 	isOpen:boolean = false;
 
-	@ViewChild('x') passwordRef!: ElementRef;
+	@ViewChild('passwordFeild') passwordRef!: ElementRef;
 	showPassword = false;
 	password() {
 		this.passwordRef.nativeElement.type=this.passwordRef.nativeElement.type=='password'?'text':'password'
 		this.showPassword = !this.showPassword;
-	}
-  
+	}  
 }

@@ -2,13 +2,12 @@
     <div class="row productCard" *ngFor="let i of ['Mobile','Tablets','Fashion','Food & Supplements']">
         <div class="cardName">
             <div class="cardName-Name">
-                <h2 class="mt-4">{{"Best of " + i}}</h2>
-                <a><div class="cardButton">View All</div></a>
+                <h2 class="mt-5 pt-2">{{"Best of " + i}}</h2>
+                <!-- <a><div class="cardButton">View All</div></a> -->
             </div>
         </div>
         <div class="allProducts" *ngIf="filteringData(i)!=0">
             <div class="product" *ngFor="let product of filteredData">
-                <!-- <div (click)="searchProduct(product.id)" style="cursor: pointer;"> -->
                 <div routerLink="/productDetails/{{product.id}}" style="cursor: pointer;">
                     <img src="{{product.srcLink}}">
                     <div class="productNameCSS">{{product.name}}</div>
