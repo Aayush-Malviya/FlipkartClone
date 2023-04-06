@@ -10,29 +10,14 @@ export class ComponentsComponent implements OnInit {
 
   route : string = "home";
 
-  searchValue:string = "";
-
-  searchWithProductId:number = 1;
-
   constructor(private ServicesService : ServicesService, private router: Router){
     this.router.events.subscribe((event) => {       
-      event instanceof NavigationEnd ? this.route = event.url: 
-      "";    
+      event instanceof NavigationEnd ? this.route = event.url: "";    
     })
   }
 
   ngOnInit(): void {
     
-  }
-
-  showProductData(Id:number){
-    this.searchWithProductId = Id;
-    this.route = "productView"
-  }
-
-  searchResults(searchVaue:string){
-    this.searchValue = searchVaue;
-    this.route = "productList";
   }
 
   showCartProducts(showCartOrNot:boolean){
@@ -41,7 +26,7 @@ export class ComponentsComponent implements OnInit {
 
   showHomePage(showOrNot:boolean){
     this.route = "/";
-    this.router.navigate(['/']);
+    this.router.navigate(['/']); //to remove the earlier path when navigating to home
   }
 
 }

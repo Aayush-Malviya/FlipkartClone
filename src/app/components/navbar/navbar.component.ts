@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginScreenComponent } from '../login-screen/login-screen.component';
 import { ServicesService } from 'src/app/services/services.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -10,14 +11,14 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private modalService: NgbModal, private ServicesService: ServicesService, private route: Router) {
+  constructor(private modalService: NgbModal, private ServicesService: ServicesService, private route: Router, private http:HttpClient) {
   };
   
   //--------------Handle search-------------------------
   searchValue:string = "";
   //navigate to the search value to show search results
   searchResult(){
-    this.route.navigate(['/productList',this.searchValue]);
+    this.route.navigate(['/product/productList',this.searchValue]);
   }
 
   //--------------Show cart----------------------------

@@ -1,19 +1,13 @@
 <app-navbar class="sticky-top" (showCartEmitter)="showCartProducts($event)" (showHomePage)="showHomePage($event)">
 </app-navbar>
 
-<!-- first page  -->
-
-
-<!--product list page-->
-
-
 <container-element [ngSwitch]="route">
     
     <div *ngSwitchCase="'/'">
         
         <app-shopping-categories></app-shopping-categories>
         <app-advertisement></app-advertisement>
-        <app-product-card (productIdEmitter) = "showProductData($event)"></app-product-card> 
+        <app-product-card></app-product-card> 
     </div>
 
     <div *ngSwitchCase="'cart'">

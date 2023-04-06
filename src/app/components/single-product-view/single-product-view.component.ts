@@ -2,7 +2,6 @@ import { Component, OnInit , Input} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import data from 'src/app/productData/data';
 import { ServicesService } from 'src/app/services/services.service';
-
 @Component({
   selector: 'app-single-product-view',
   templateUrl: './single-product-view.component.html',
@@ -18,7 +17,6 @@ export class SingleProductViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log(this.searchProductId);
     this.id= Number(this.activeRoute.snapshot.paramMap.get('id'));
     this.productDetails = data[this.id-1];
   }

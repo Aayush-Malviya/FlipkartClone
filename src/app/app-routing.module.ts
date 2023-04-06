@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SingleProductViewComponent } from './components/single-product-view/single-product-view.component';
-import { ProductListViewComponent } from './components/product-list-view/product-list-view.component';
-
 
 const routes: Routes = [
- 	{path: 'productList/:search', component: ProductListViewComponent},
-  {path: 'productDetails/:id', component: SingleProductViewComponent},
+  {path: 'product', loadChildren:() => import('./product/product.module').then(openModule => openModule.ProductModule)}
 ];
 
 @NgModule({

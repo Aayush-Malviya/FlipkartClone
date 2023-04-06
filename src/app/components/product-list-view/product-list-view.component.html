@@ -35,15 +35,12 @@
             </div>
             <hr>
             <div class="row Allproducts" *ngFor="let i of filteredData" >
-                <!-- <div style="width: 170px; cursor: pointer;" (click)="callSingleProductViewEventEmitter(i.id)"> -->
-                    <div style="width: 170px; cursor: pointer;" routerLink="/productDetails/{{i.id}}">
-
-                    <img src={{i.srcLink}}  class="img-fluid" >
+                <div style="width: 170px; cursor: pointer;" routerLink="/product/productDetails/{{i.id}}" class="d-flex justify-content-center align-items-center">
+                    <img src={{i.srcLink}}  class="img-fluid"  style="max-height: 200px;">
                 </div>
                 <div style="padding-left: 40px; width: 419px;">
                     <div>
-                        <!-- <div class="productName" (click)="callSingleProductViewEventEmitter(i.id)"><h5>{{i.name}}</h5></div> -->
-                        <div class="productName" routerLink="/productDetails/{{i.id}}"><h5>{{i.name}}</h5></div>
+                        <div class="productName" routerLink="/product/productDetails/{{i.id}}"><h5>{{i.name}}</h5></div>
 
                         <div style="padding: 10px 0 8px;">
                             <div class="ratingButton">

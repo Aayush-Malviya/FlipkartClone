@@ -29,7 +29,7 @@
             </div>
             <div class="navbarCart" (click)="showCart()" routerLink="/cart">
                 <div class="navbarOrderCount" *ngIf="cartCount > 0">{{cartCount}}</div>
-                <p><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</p>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
             </div>
 
             <div class="logOutButton" *ngIf="isUserLoggedIn==true" (click)="userLoggedOut()">

@@ -66,13 +66,4 @@ export class ProductListViewComponent implements OnInit {
       id : 9 , categoryName : "Offer Zone", subCategory: false
     }
   ]
-
-  // @Output()
-  // prodductListIDEventEmitter = new EventEmitter<number>();
-  
-  // callSingleProductViewEventEmitter(Id:number){
-  //   this.prodductListIDEventEmitter.emit(Id);
-  // }
-
-  
 }

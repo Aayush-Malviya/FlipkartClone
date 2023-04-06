@@ -11,8 +11,7 @@ import { Observable } from 'rxjs';
 export class CartComponent implements OnInit {
 
   constructor(public ServicesService :ServicesService) { }
-  
-  // hash:any; 
+   
   cartData:any = [];
   quantity:number[] = [];
   price : number = 0;
