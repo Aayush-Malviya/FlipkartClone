@@ -24,13 +24,15 @@ export class NavbarComponent implements OnInit {
   //--------------Show cart----------------------------
   @Output() showCartEmitter = new EventEmitter<boolean>();
   showCart(){
-    this.showCartEmitter.emit(true);
+    // this.showCartEmitter.emit(true);
+    this.route.navigateByUrl("/cart");
   }
 
   //--------------Show Home-----------------------------
   @Output() showHomePage = new EventEmitter<boolean>();
   goToHomePage(){
-    this.showHomePage.emit(true);
+    // this.showHomePage.emit(true);
+    this.route.navigateByUrl("/");
   }
 
   cartCount:number = this.ServicesService.totalProductPresentInCart;

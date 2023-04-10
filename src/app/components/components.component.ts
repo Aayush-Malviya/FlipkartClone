@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router , NavigationEnd} from '@angular/router';
+import { Router} from '@angular/router';
 import { ServicesService } from '../services/services.service';
+import navBarShoppingCategories from '../Data/navBarShoppingCategories';
 @Component({
   selector: 'app-components',
   templateUrl: './components.component.html',
@@ -8,25 +9,11 @@ import { ServicesService } from '../services/services.service';
 })
 export class ComponentsComponent implements OnInit {
 
-  route : string = "home";
+  constructor(private ServicesService : ServicesService, private router: Router){  }
 
-  constructor(private ServicesService : ServicesService, private router: Router){
-    this.router.events.subscribe((event) => {       
-      event instanceof NavigationEnd ? this.route = event.url: "";    
-    })
-  }
+  ngOnInit(): void {  }
 
-  ngOnInit(): void {
-    
-  }
-
-  showCartProducts(showCartOrNot:boolean){
-    this.route = "cart";
-  }
-
-  showHomePage(showOrNot:boolean){
-    this.route = "/";
-    this.router.navigate(['/']); //to remove the earlier path when navigating to home
-  }
-
+  landingPagecategories = this.ServicesService.getLandingPageShoppingCategories();
+  
+  // navbarCategories = navBarShoppingCategories;
 }

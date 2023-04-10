@@ -1,5 +1,6 @@
-import { Component, OnInit , Output, EventEmitter} from '@angular/core';
-import data from 'src/app/productData/data';
+import { Component, Input, OnInit} from '@angular/core';
+import { ServicesService } from 'src/app/services/services.service';
+
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
@@ -10,14 +11,18 @@ export class ProductCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  productdata = [...data];   //copying all data
+  constructor(private ServicesService:ServicesService){}
+
+  productdata = [...this.ServicesService.getProductData()];
+
+  @Input() productCategory:any; 
 
   filteredData: any = [];
   filteringData(parm : string){
     this.filteredData = [];
-    for(let i=0 ; i<data.length ;  i++){
-      if(parm==data[i].category)
-        this.filteredData.push(data[i]);
+    for(let i=0 ; i<this.productdata.length ;  i++){
+      if(parm==this.productdata[i].category)
+        this.filteredData.push(this.productdata[i]);
     }
     return this.filteredData;
   }

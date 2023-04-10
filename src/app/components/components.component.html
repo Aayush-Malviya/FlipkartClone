@@ -1,20 +1,16 @@
-<app-navbar class="sticky-top" (showCartEmitter)="showCartProducts($event)" (showHomePage)="showHomePage($event)">
-</app-navbar>
+<app-shopping-categories></app-shopping-categories>    
 
-<container-element [ngSwitch]="route">
-    
-    <div *ngSwitchCase="'/'">
-        <app-shopping-categories></app-shopping-categories>
-        <app-advertisement></app-advertisement>
-        <app-product-card></app-product-card> 
-    </div>
+<app-advertisement></app-advertisement>
 
-    <div *ngSwitchCase="'cart'">
-        <app-cart></app-cart> 
-    </div>
-    
-    <div *ngSwitchDefault>
-        <router-outlet></router-outlet>
-    </div>
+<ng-container *ngFor="let category of landingPagecategories">
+    <app-product-card [productCategory] = "category"></app-product-card>
+</ng-container>
 
-</container-element>
+
+
+
+
+
+<!-- <ng-container class="row" *ngFor="let navbarCategory of navbarCategories"> -->
+    <!-- <app-shopping-categories [category]="navbarCategory"></app-shopping-categories> -->
+<!-- </ng-container> -->

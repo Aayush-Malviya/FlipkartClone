@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import data from 'src/app/productData/data';
+import { ServicesService } from 'src/app/services/services.service';
 import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-product-list-view',
@@ -9,21 +9,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductListViewComponent implements OnInit {
 
-  constructor(private route: Router ,private activeRoute: ActivatedRoute , private http : HttpClient) { }
+  constructor(private route: Router ,private activeRoute: ActivatedRoute , private http : HttpClient, private ServicesService: ServicesService) { }
 
   searchResult:string="";
   filteredData: any = [];          //setting type as object was giving erorr not able to access the attributes
   numberOfProducts:number = 0;
-  
-
+  productData = [...this.ServicesService.getProductData()];
   ngOnInit(): void {
-
-    // this.http.get('https://localhost:3000/data').subscribe((dat) => {
-    //   this.dataFromApi = data;
-    // })
-    // console.log(this.dataFromApi);
-    // console.log(typeof this.dataFromApi);
-
     this.activeRoute.paramMap.subscribe((temp) => {
       this.searchResult = temp.get('search') ?? "";
       this.filteringData();
@@ -33,46 +25,19 @@ export class ProductListViewComponent implements OnInit {
   filteringData(){
     this.filteredData = [];
     if(this.searchResult==""){
-      this.filteredData = data; //copying data
+      this.filteredData = this.productData; //copying data
     }
     else{
       this.searchResult = this.searchResult.toLowerCase();
-      for(let i=0 ; i<data.length ;  i++){
-        let temp = data[i].name.toLowerCase();
+      for(let i=0 ; i<this.productData.length ;  i++){
+        let temp = (this.productData[i]).name.toLowerCase();
         if(temp.includes(this.searchResult))
-          this.filteredData.push(data[i]);
+          this.filteredData.push(this.productData[i]);
       }
     }
     this.numberOfProducts = this.filteredData.length;
   }
 
-  productListCategories = [
-    {
-      id : 1 , categoryName : "Electronics", subCategory: true
-    },
-    {
-      id : 2 , categoryName : "TVs & Appliances", subCategory: true
-    },
-    {
-      id : 3 , categoryName : "Men", subCategory: true
-    },
-    {
-      id : 4 , categoryName : "Women", subCategory: true
-    },
-    {
-      id : 5 , categoryName : "Baby & Kids", subCategory: true
-    },
-    {
-      id : 6 , categoryName : "Home & Furniture", subCategory: true
-    },
-    {
-      id : 7 , categoryName : "Sports, Books & More", subCategory: true
-    },
-    {
-      id : 8 , categoryName : "Flights",  subCategory: false
-    },
-    {
-      id : 9 , categoryName : "Offer Zone", subCategory: false
-    }
-  ]
+   productListCategories = [...this.ServicesService.getProductCategories()];
+
 }

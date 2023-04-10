@@ -1,6 +1,10 @@
 import { Injectable, Inject } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
+import data from '../Data/productDetails';
+import categories from '../Data/productCategories';
+import navBarShoppingCategories from '../Data/navBarShoppingCategories';
+import landingPageShoppingCategories from '../Data/landingPageShoppingCategories';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,8 +16,26 @@ export class ServicesService {
     this.email = '';
     this.isLoggedIn = false;
   }
-  
-  
+
+  getProductData(){
+	return data;
+  }
+
+  getProductCategories(){
+	return categories
+  }
+
+  getProductById(id : number){
+	return data[id];
+  }
+
+  getNavBarShoppingCategories(){
+    return navBarShoppingCategories;
+  }
+
+  getLandingPageShoppingCategories(){
+    return landingPageShoppingCategories;
+  }
 
   getLoginStatus() : boolean{
     return this.isLoggedIn;

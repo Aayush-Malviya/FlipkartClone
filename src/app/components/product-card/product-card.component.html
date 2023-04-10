@@ -1,12 +1,12 @@
 <div class="container-fluid">
-    <div class="row productCard" *ngFor="let i of ['Mobile','Tablets','Fashion','Food & Supplements']">
+    <div class="row productCard">
         <div class="cardName">
             <div class="cardName-Name">
-                <h2 class="mt-5 pt-2">{{"Best of " + i}}</h2>
+                <h2 class="mt-5 pt-2">{{"Best of " + productCategory}}</h2>
                 <!-- <a><div class="cardButton">View All</div></a> -->
             </div>
         </div>
-        <div class="allProducts" *ngIf="filteringData(i)!=0">   <!--Just to filter data at start so that we have updated products-->
+        <div class="allProducts" *ngIf="filteringData(productCategory) !=0">   <!--Just to filter data at start so that we have updated products-->
             <div class="product" *ngFor="let product of filteredData">
                 <div routerLink="product/productDetails/{{product.id}}" style="cursor: pointer;">
                     <img src="{{product.srcLink}}">
