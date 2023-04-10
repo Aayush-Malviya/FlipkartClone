@@ -7,15 +7,10 @@ import data from 'src/app/productData/data';
 })
 export class ProductCardComponent implements OnInit {
 
-  @Output() productIdEmitter = new EventEmitter<number>();
-  constructor() { 
-    
-  }
-
   ngOnInit(): void {
   }
 
-  productdata = [...data];
+  productdata = [...data];   //copying all data
 
   filteredData: any = [];
   filteringData(parm : string){
@@ -25,10 +20,6 @@ export class ProductCardComponent implements OnInit {
         this.filteredData.push(data[i]);
     }
     return this.filteredData;
-  }
-
-  searchProduct(productId:number){
-    this.productIdEmitter.emit(productId);
   }
   
 }

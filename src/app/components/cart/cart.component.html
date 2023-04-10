@@ -1,6 +1,7 @@
 <div class="container-fluid" style="background-color: #eff1f4" >
     <div class="row  pt-4 mx-2 d-flex justify-content-around"  >
         <div class="col">
+
             <div class="row d-flex justify-content-around align-items-center" style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);background-color: white;">
                 <div class="col-3 d-flex justify-content-around" style="font-size: 16px; color: #2a55e5; border-bottom: 3px solid #2a55e5; padding: 17px;">FlipKart ({{getNumberOfProducts()}})</div>
                 <div class="col-3 d-flex justify-content-around">Grocery</div>
@@ -10,6 +11,7 @@
                 <div>From Saved Addresses</div>
                 <div id="enterDeliveryAdd">Enter Delivery Pincode</div>
             </div>
+
             <div class="row  p-2 " style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); font-size: 14px; background-color: white; " *ngFor="let i of cartData; let indexOfelement=index;">
                     <div class="col-3 d-flex justify-content-center align-items-center" ><img src="{{i.srcLink}}" style="max-height: 150px; max-width: 150px;"></div>
                     <div class="col-8">
@@ -26,7 +28,9 @@
                         </div>
                     </div>
             </div>
+
         </div>
+
         <div class="col-4 ml-3 mb-5" style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); min-height: 390px; background-color: white;">
             <div class="pb-2" style="padding: 13px 24px; min-height: 47px; color: #878787; font-weight: 600;">PRICE DETAILS</div>
             <hr>
@@ -41,5 +45,6 @@
             <p class="px-4 py-3" style="color: #47964a; font-size: 16px; font-weight: 600;">You will save &#8377;{{discount}} on this order</p>
             <div class="placeOrderButton" (click)="placeOrderButtonClicked()">PLACE ORDER</div>
         </div>
+        
     </div>
 </div>

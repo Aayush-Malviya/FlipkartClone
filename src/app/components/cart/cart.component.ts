@@ -18,9 +18,6 @@ export class CartComponent implements OnInit {
   discount:number = 0;
   total:number = 0;
 
-
-  
-
   ngOnInit(): void {
     //Need to subscribe to changes happening to hashmap in service to update
     this.ServicesService.changeInHashMap.subscribe((newHashMap:any)=>{
@@ -29,13 +26,12 @@ export class CartComponent implements OnInit {
       this.price = 0;
       this.discount = 0;
       this.total = 0;
-      for (let entry of newHashMap.entries()) {
-        console.log(entry);
-        let id = entry[0];
-        let count = entry[1];
+      for (let entry of newHashMap.entries()) {  //iterating over the hashmap
+        let id = entry[0];     //key
+        let count = entry[1];  //value
   
-        let tempOriginalPrice = parseFloat(data[id-1].originalPrice.replace(/,/g, ''))*count;
-        tempOriginalPrice = Math.round(tempOriginalPrice * 100) / 100;
+        let tempOriginalPrice = parseFloat(data[id-1].originalPrice.replace(/,/g, ''))*count;  //removing , & space from price string
+        tempOriginalPrice = Math.round(tempOriginalPrice * 100) / 100;   
         this.price += tempOriginalPrice;
   
         let tempPrice = parseFloat(data[id-1].price.replace(/,/g, ''))*count;

@@ -1,6 +1,7 @@
-import { Component, OnInit , Input, EventEmitter, Output} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import data from 'src/app/productData/data';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-product-list-view',
   templateUrl: './product-list-view.component.html',
@@ -8,13 +9,21 @@ import data from 'src/app/productData/data';
 })
 export class ProductListViewComponent implements OnInit {
 
-  constructor(private route: Router ,private activeRoute: ActivatedRoute ) { }
+  constructor(private route: Router ,private activeRoute: ActivatedRoute , private http : HttpClient) { }
 
-  @Input() searchResult12: string = "";
   searchResult:string="";
   filteredData: any = [];          //setting type as object was giving erorr not able to access the attributes
   numberOfProducts:number = 0;
+  
+
   ngOnInit(): void {
+
+    // this.http.get('https://localhost:3000/data').subscribe((dat) => {
+    //   this.dataFromApi = data;
+    // })
+    // console.log(this.dataFromApi);
+    // console.log(typeof this.dataFromApi);
+
     this.activeRoute.paramMap.subscribe((temp) => {
       this.searchResult = temp.get('search') ?? "";
       this.filteringData();

@@ -33,25 +33,15 @@ export class NavbarComponent implements OnInit {
     this.showHomePage.emit(true);
   }
 
+  cartCount:number = this.ServicesService.totalProductPresentInCart;
   ngOnInit(): void {
     this.ServicesService.changeInCoutEventEmitter.subscribe(()=>{
       this.cartCount = this.ServicesService.getCartSize();
     });
   }
-  
-  
-
-  //----------------Get Cart status using service-----------
-  cartCount:number = this.ServicesService.totalProductPresentInCart;
-  ngOnChanges(changes: SimpleChanges): void {
-    this.cartCount = this.ServicesService.totalProductPresentInCart;
-  }
-  
-
 
   loggedInUser:string = "admin...";
   isUserLoggedIn:boolean = this.ServicesService.getLoginStatus();
-  userDetails: object = {};
 
   //To open the login screen component
   openModal() {

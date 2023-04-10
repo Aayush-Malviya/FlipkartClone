@@ -9,18 +9,18 @@
     </div>
 </nav>
 
-
 <div class="container-fluid">
     <div class="row d-flex justify-content-center m-2" style="background-color: rgb(255, 255, 255);padding: 16px;box-shadow: 0 1px 5px #e3dbdb;">
         <div class="col-4 productImage">
             <div class="row d-flex justify-content-center" style="border: 1px solid #f0f0f0; padding: 16px;"><img src={{productDetails.srcLink}} class="img-fluid" style="max-height: 350px;"></div>
-            <div class="row d-flex justify-content-around mt-2">
-                <div class="col-5.5 AddToCartButton d-flex justify-content-center align-items-center" (click)="addToCart(productDetails.id)"><a><i class="fa fa-shopping-cart" aria-hidden="true"></i> ADD TO CART</a></div>
-                <div class="col-5.5 BuyButton d-flex justify-content-center align-items-center"><a><i class="fa fa-bolt" aria-hidden="true"></i> BUY NOW</a></div>
+            <div class="row d-flex justify-content-around mt-3">
+                <div class="col-5 AddToCartButton d-flex justify-content-center align-items-center" (click)="addToCart(productDetails.id)"><a><i class="fa fa-shopping-cart" aria-hidden="true"></i> ADD TO CART</a></div>
+                <div class="col-5 BuyButton d-flex justify-content-center align-items-center"><a><i class="fa fa-bolt" aria-hidden="true"></i> BUY NOW</a></div>
             </div>
         </div>
         <div class="col-7 productDescription" >
             <div><h5>{{productDetails.name}}</h5></div>
+            
             <div style="padding: 10px 0 8px;">
                 <div class="ratingButton">
                     {{productDetails.rating}}
@@ -32,7 +32,6 @@
                 &#8377; {{productDetails.price}}
             </div>
             
-            
             <div style="display: inline-block; color: #878787; font-size: 14px; padding: 8px 0 0; margin-bottom: 15px;">
                 <s>&#8377; {{productDetails.originalPrice}}</s><span style="padding-left: 10px; color: #388E3C;">{{productDetails.discount+"% "}}off</span>
             </div>
@@ -40,14 +39,12 @@
             <div class="descriptionListDiv">
                 <ul class="descriptionList">
                     <li *ngFor="let item of productDetails | keyvalue">
-                        
                         <span style=" color: #c2c2c2; padding-right: 8px">•</span> 
                             {{item.key}} : {{item.value}}
                     </li>
                 </ul>
             </div>
             <div style="font-weight: 400; font-size: 14px; line-height: 20px; padding: 4px 0;">+ ₹29 Secured Packaging Fee</div>
-            
             
             <div style="font-family: sans-serif, Arial, Helvetica, sans-serif;">
                 <p>Availabel Offers</p>

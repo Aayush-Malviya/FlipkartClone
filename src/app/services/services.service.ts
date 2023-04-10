@@ -1,4 +1,4 @@
-import { Injectable, Inject, EventEmitter, Output } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
 @Injectable({
@@ -12,6 +12,8 @@ export class ServicesService {
     this.email = '';
     this.isLoggedIn = false;
   }
+  
+  
 
   getLoginStatus() : boolean{
     return this.isLoggedIn;
@@ -28,7 +30,6 @@ export class ServicesService {
       this.isLoggedIn = true;
   }
 
-
   /*-----------------------to get & set email we got from login component---------------------*/
   getEmail() : string{
     return this.email;
@@ -36,26 +37,12 @@ export class ServicesService {
   setEmail(newEmail: string ){
     this.email = newEmail;
   }
-
-  /*----------------------to open & close the modal present in login Component----------------*/
-
-  private modalState = new BehaviorSubject<boolean>(false);
-  modalState$ = this.modalState.asObservable();
-
-  openModal() {
-    this.modalState.next(true);
-  }
-
-  closeModal() {
-    this.modalState.next(false);
-  }
-
+  
   /*-------------------------------------Cart----------------------------------*/ 
   totalProductPresentInCart:number = 0;
   hashMap:any = new Map<number, number>(); 
 
-  addToCart(productdataId: number) {
-    console.log(productdataId);
+  addToCart(productdataId: number){
     this.totalProductPresentInCart += 1;
     if (this.hashMap.has(productdataId) === false) {
       this.hashMap.set(productdataId, 1);

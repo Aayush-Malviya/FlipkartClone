@@ -19,7 +19,6 @@ export class LoginScreenComponent implements OnInit {
 	}
 
 	onSubmit(){
-		console.log(this.loginForm);
 		this.checkLoginCredentials();
 	}
 
@@ -27,8 +26,8 @@ export class LoginScreenComponent implements OnInit {
 	constructor(private ServicesService: ServicesService, private activeModalService: NgbActiveModal) {  }
 
 	validCredentials = {
-	validEmail : "admin@gmail.com",
-	validPassword : "Admin@#1"
+		validEmail : "admin@gmail.com",
+		validPassword : "Admin@#1"
 	};
 
 	/*------------------------Validating login Credentials on button click---------------*/
@@ -50,7 +49,7 @@ export class LoginScreenComponent implements OnInit {
 	@ViewChild('passwordFeild') passwordRef!: ElementRef;
 	showPassword = false;
 	password() {
-		this.passwordRef.nativeElement.type=this.passwordRef.nativeElement.type=='password'?'text':'password'
+		this.passwordRef.nativeElement.type = this.passwordRef.nativeElement.type=='password'?'text':'password'
 		this.showPassword = !this.showPassword;
 	}  
 }
