@@ -1,14 +1,14 @@
-import { Injectable, Inject } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
-import { DOCUMENT } from '@angular/common';
+import { Injectable} from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import data from '../Data/productDetails';
 import categories from '../Data/productCategories';
 import navBarShoppingCategories from '../Data/navBarShoppingCategories';
 import landingPageShoppingCategories from '../Data/landingPageShoppingCategories';
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class ServicesService {
+export class ServicesService implements CanActivate {
   private email : string;
   private isLoggedIn:boolean = false;
 
@@ -16,6 +16,11 @@ export class ServicesService {
     this.email = '';
     this.isLoggedIn = false;
   }
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean{
+    return this.getLoginStatus();
+  }
+  
 
   getProductData(){
 	return data;
@@ -93,6 +98,8 @@ export class ServicesService {
   removeAllProducts(){
     this.totalProductPresentInCart = 0;
     this.hashMap.clear();
+    this.raiseChangeInHashMapEvent();
+    this.raiseChangeInCoutEventEmitter(1);
   }
 
   getCartSize(){

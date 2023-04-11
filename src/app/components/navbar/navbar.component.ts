@@ -60,6 +60,8 @@ export class NavbarComponent implements OnInit {
     this.isUserLoggedIn = false;
     this.loggedInUser = "";
     this.ServicesService.setLoginStatus();
+    this.ServicesService.removeAllProducts();
+    this.goToHomePage();
   }
 
 }

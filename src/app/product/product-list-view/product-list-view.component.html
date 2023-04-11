@@ -1,4 +1,4 @@
-<nav cla>
+<!-- <nav cla>
     <div class="container-fluid">
         <div class="row d-flex justify-content-between align-items-center px-4 navbar-category">
             <div *ngFor="let category of productListCategories">
@@ -76,6 +76,56 @@
                 </div>
                 
             </div>
+        </div>
+    </div>
+</div> -->
+
+
+<nav cla>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-between align-items-center px-4 navbar-category">
+            <div *ngFor="let category of productListCategories">
+                <span>{{category.categoryName}}</span>
+                <i class="fa fa-angle-down" aria-hidden="true" *ngIf="category.subCategory==true"></i>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid" style="font-family: 'Roboto', sans-serif;">
+    <div class="row productList">
+        <div class="filter-sidebox">
+            <div><h5>Filters</h5></div><hr>
+            <div>Categories <i class="fa fa-angle-down" aria-hidden="true"></i></div><hr>
+            <div>Price <i class="fa fa-angle-down" aria-hidden="true"></i></div><hr>
+            <div>Brand <i class="fa fa-angle-down" aria-hidden="true"></i></div><hr>
+            <div>Customer rating <i class="fa fa-angle-down" aria-hidden="true"></i></div><hr>
+            <div>Offers <i class="fa fa-angle-down" aria-hidden="true"></i></div><hr>
+            <div>Availability <i class="fa fa-angle-down" aria-hidden="true"></i></div><hr>
+            <div>Discount <i class="fa fa-angle-down" aria-hidden="true"></i></div><hr>
+            <div>Availabel on your PIN <i class="fa fa-angle-down" aria-hidden="true"></i></div>
+        </div>
+
+        <div class="filteredResults">
+
+            <div class="mt-2" style="padding: 12px 16px 0;">
+                <span style="font-size: 16px; margin: 8px 0 0;">Showing {{numberOfProducts}} results for "{{searchResult}}"</span>
+            </div>
+
+            <div style="padding: 8px 16px 0;">
+                <a href="#"><div class="filter-category">Sort By</div></a>
+                <a href="#"><div class="filter-category" style="color: #2874f0; border-bottom: 2px solid #2874f0;">Relevance</div></a>
+                <a href="#"><div class="filter-category">Popularity</div></a>
+                <a href="#"><div class="filter-category">Price -- Low to High</div></a>
+                <a href="#"><div class="filter-category">Price High to Low</div></a>
+                <a href="#"><div class="filter-category">Newest First</div></a>
+            </div>
+
+            <hr>
+            
+            <ng-container *ngFor="let singleData of filteredData">
+                <app-product-list-item [data]="singleData"></app-product-list-item>
+            </ng-container>
+            
         </div>
     </div>
 </div>

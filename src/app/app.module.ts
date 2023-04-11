@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { CartComponent } from './components/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ServicesService } from './services/services.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ ServicesService], //added for route guards
   bootstrap: [AppComponent]
 })
 export class AppModule {
