@@ -10,7 +10,8 @@
     box-shadow: 0 1px 5px #e3dbdb;
 }
 .cardName{
-    background-image: url("/assets/productCardBackgroundImage.webp");
+    // background-image: url('assets/productCardBackgroundImage.webp');
+    background-image: url(../../../assets/productCardBackgroundImage.webp);
     width: 19%;
     height: 310px;
     background-repeat: no-repeat;

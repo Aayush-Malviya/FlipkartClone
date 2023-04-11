@@ -3,14 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-.categoryHeader{
+.categoryCard{
+    padding: 12px 8px;
     font-size: 14px;
-    font-weight: 400;
-    border: none;
-    box-shadow: 0 1px 5px #e3dbdb;
-    .categoryCard{
-        padding: 12px 8px;
-    }
+    color: #212529;
     img{
         width: 64px;
         height: 64px;

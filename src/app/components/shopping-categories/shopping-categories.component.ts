@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
@@ -14,4 +14,5 @@ export class ShoppingCategoriesComponent implements OnInit {
   
   categories = this.ServicesService.getNavBarShoppingCategories();
 
+  @Input() category : any;
 }

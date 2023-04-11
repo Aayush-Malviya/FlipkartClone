@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { ServicesService } from '../services/services.service';
-import navBarShoppingCategories from '../Data/navBarShoppingCategories';
+
 @Component({
   selector: 'app-components',
   templateUrl: './components.component.html',
@@ -9,11 +9,10 @@ import navBarShoppingCategories from '../Data/navBarShoppingCategories';
 })
 export class ComponentsComponent implements OnInit {
 
-  constructor(private ServicesService : ServicesService, private router: Router){  }
+    constructor(private ServicesService : ServicesService, private router: Router){  }
 
-  ngOnInit(): void {  }
+    ngOnInit(): void {  }
 
-  landingPagecategories = this.ServicesService.getLandingPageShoppingCategories();
-  
-  // navbarCategories = navBarShoppingCategories;
+    landingPagecategories = this.ServicesService.getLandingPageShoppingCategories();
+    navbarCategories = this.ServicesService.getNavBarShoppingCategories();
 }

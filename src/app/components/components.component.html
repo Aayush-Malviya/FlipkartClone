@@ -1,4 +1,10 @@
-<app-shopping-categories></app-shopping-categories>    
+<!-- <app-shopping-categories></app-shopping-categories>     -->
+
+<div style="border: none; box-shadow: 0 1px 5px #e3dbdb;" class="row d-flex justify-content-between px-3" >
+    <ng-container *ngFor="let navbarCategory of navbarCategories">
+        <app-shopping-categories [category]="navbarCategory"></app-shopping-categories>
+    </ng-container>
+</div>
 
 <app-advertisement></app-advertisement>
 
@@ -9,8 +15,3 @@
 
 
 
-
-
-<!-- <ng-container class="row" *ngFor="let navbarCategory of navbarCategories"> -->
-    <!-- <app-shopping-categories [category]="navbarCategory"></app-shopping-categories> -->
-<!-- </ng-container> -->

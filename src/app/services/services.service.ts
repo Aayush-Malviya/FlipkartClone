@@ -12,7 +12,7 @@ export class ServicesService {
   private email : string;
   private isLoggedIn:boolean = false;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
+  constructor() {
     this.email = '';
     this.isLoggedIn = false;
   }
